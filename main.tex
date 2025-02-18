@@ -1,0 +1,45 @@
+% !TEX TS-program = luatex
+% Awesome Source CV LaTeX Template
+%
+% This template has been downloaded from:
+% https://github.com/darwiin/awesome-neue-latex-cv
+%
+% Author:
+% Christophe Roger (Darwiin)
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+
+\documentclass[localFont,navy,alternative]{cv}
+\name{Lars}{van Dartel}
+\tagline{}
+\photo{4cm}{photo}
+\socialinfo{
+	\linkedin{lars-van-dartel-3ab027220}\\
+	\github{LarsvanDartel}\\
+	\smartphone{+31 6 41158670}\\
+    \email{larsvandartel@proton.me}
+	% \address{Borne 7, 5481~XR, Schijndel}\\
+    % \infos{Born 04-11-2004 in Dordrect, The Netherlands}
+}
+
+\begin{document}
+
+	\makecvheader
+
+	\makecvfooter
+		{\textsc{\today}}
+		{\textsc{Lars van Dartel - CV}}
+		{\thepage}
+
+	\input{sections/1_headline.tex}
+	\input{sections/2_competences.tex}
+    \input{sections/3_education.tex}
+    \input{sections/4_experiences.tex}
+    \input{sections/5_languages.tex}
+    % \input{sections/X_interests.tex}
+	\input{sections/6_projects}
+	% \input{sections/X_references.tex}
+
+
+\end{document}
