@@ -73,6 +73,7 @@
 \RequirePackage{array}
 \RequirePackage{enumitem}
 \RequirePackage{longtable}
+\RequirePackage{multicol}
 \RequirePackage{etoolbox}
 \RequirePackage{tikz}
 \RequirePackage[skins]{tcolorbox}
@@ -140,7 +141,7 @@
 \setlist[itemize,2]{label=\faAngleRight, nosep, leftmargin=1.5em}
 
 % Setup Array : new column type
-\newcolumntype{R}[1]{>{\hfill}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft}b{#1}}
 
 %Italian hyphenation for the word: ''corporations''
 \hyphenation{im-pre-se}
@@ -377,8 +378,8 @@
 %                    }
 %                    {<Technology list>}
 \newcommand\education[5]{
-    \textbf{#1} & \textbf{#2}\newline
-         \textbf{\textsc{#3}} \\*
+    \textbf{#1} & \textbf{#2}\\
+       & \textbf{\textsc{#3}} \\*
     \textbf{#4} & \begin{minipage}[t]{\dimexpr \textwidth - \leftcolumn - 4\tabcolsep - \arrayrulewidth}
              #5
          \end{minipage}\\
@@ -400,29 +401,11 @@
 %                    }
 %                    {<Technology list>}
 \newcommand\experience[6]{
-  \textbf{#1}    & \textbf{#2, \textsc{#3}}   								\\*
-  \textbf{#4}    & \begin{minipage}[t]{\dimexpr \textwidth - \leftcolumn - 4\tabcolsep - \arrayrulewidth}
-  					         #5
-                   \end{minipage}										\\*
-                 & \footnotesize{\foreach \n in {#6}{\cvtag{\n}}} 	\\
-  }
-
-% Render a consultant experience in the experiences environment
-% Usage: 
-% \consultantexperience
-%  {<End date>}      {<Consultant title>}{<Consulting Enterprise>}{<Country>}
-%  {<Start date}     {<Client title>}{<Client business unit>}
-%                    {
-%                      <Experience description (Could be a list)>
-%                    }
-%                    {<Technology list>}
-\newcommand\consultantexperience[9]{
-  \textbf{#1}    & \textbf{#2, \textsc{#3}, #4}   								\\*
-  \textbf{#5}    & \emph{#6} pour \textsc{#7}                       				\\*
-  				       & 	\begin{minipage}[t]{\dimexpr \textwidth - \leftcolumn - 4\tabcolsep - \arrayrulewidth}
-  						        #8
-                   	\end{minipage}										\\*
-                 & \footnotesize{\foreach \n in {#9}{\cvtag{\n}}} 	\\
+    \textbf{#1} & \textbf{#2, \textsc{#3}}\\*
+       & \begin{minipage}[b]{\dimexpr \textwidth - \leftcolumn - 4\tabcolsep - \arrayrulewidth}
+              #5
+         \end{minipage}\\*
+    \textbf{#4} & \footnotesize{\foreach \n in {#6}{\cvtag{\n}}} 	\\
   }
 
 \newcommand\emptySeparator{\multicolumn{2}{c}{}\\}
@@ -446,7 +429,7 @@
     \textbf{\textsc{#1}} \hfill \textsc{#2}\smallskip\\
     #3\\
     #4\smallskip\\
-    \footnotesize{\foreach \n in {#5}{\cvtag{\n}}}\\
+    \footnotesize{\foreach \n in {#5}{\cvtag{\n}}}
   \end{minipage}
   \\*
 }
